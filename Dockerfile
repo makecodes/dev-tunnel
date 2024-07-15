@@ -9,6 +9,7 @@ RUN apt-get update && \
     vim \
     curl \
     wget \
+    net-tools \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a user (e.g., 'dev') and set the password
