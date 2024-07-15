@@ -1,0 +1,14 @@
+dockerfile:
+  - any: ["Dockerfile"]
+
+entrypoint:
+  - any: ["entryopint"]
+
+GithubActions:
+  - any:
+      [
+        ".github/*",
+        ".github/workflows/*",
+        ".github/workflows/**/*",
+        ".github/**/*",
+      ]
