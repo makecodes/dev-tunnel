@@ -3,8 +3,13 @@ FROM ubuntu:latest AS runner
 
 # Install SSH Server
 RUN apt-get update && \
-    apt-get install -y openssh-server && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y \
+    openssh-server \
+    sudo \
+    vim \
+    curl \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
 
 # Create a user (e.g., 'dev') and set the password
 RUN useradd -rm -d /home/dev -s /bin/bash -g root -G sudo -u 1001 dev
