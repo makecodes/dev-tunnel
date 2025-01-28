@@ -32,15 +32,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    needs:
-      - build_docker
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      - name: Curl -XPOST URL
-        run: curl -XPOST https://portainer.makecodes.dev/api/webhooks/c9edd686-4c24-434f-9670-92e51ac5b801
